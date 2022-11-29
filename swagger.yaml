@@ -1,0 +1,20 @@
+swagger: "2.0"
+info:
+  title: Fitness Tracker API
+  description: API description in Markdown.
+  version: 1.0.0
+host: fitness-tracker-368805.appspot.com
+basePath: /v1
+schemes:
+  - https
+paths:
+  /ping:
+    get:
+      summary: Returns pongs.
+      description: Starter endpoint for testing.
+      operationId: "ping"
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Success
