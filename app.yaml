@@ -1,0 +1,3 @@
+endpoints_api_service:
+  name: fitness-tracker-368805.appspot.com
+  rollout_strategy: managed

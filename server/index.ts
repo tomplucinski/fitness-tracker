@@ -62,6 +62,7 @@ const root = {
 }
 
 const app = express()
+
 app.use(
   '/graphql',
   graphqlHTTP({
@@ -71,4 +72,4 @@ app.use(
   }),
 )
 app.listen(4500)
-console.log('Running a GraphQL API server at http://localhost:4500/graphql')
+console.log('Running server at http://localhost:4500')
