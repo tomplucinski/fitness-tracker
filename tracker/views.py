@@ -19,3 +19,13 @@ def get_exercises(request):
     exercises = Exercise.objects.all()
     serializer = ExerciseSerializer(exercises, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_user_exercises(request, user_id=None):
+    """Get all exercises for user"""
+    if user_id is None:
+        return Response({"error": "user_id is required"}, status=status.HTTP_400_BAD_REQUEST)
+    
+    exercises = Exercise.objects.filter(workout__user_id=user_id)
+    serializer = ExerciseSerializer(exercises, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
