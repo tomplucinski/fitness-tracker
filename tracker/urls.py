@@ -1,9 +1,8 @@
-from django.urls import path
-from . import views
+from rest_framework.routers import DefaultRouter
 
+from tracker.views.exercise_views import ExerciseViewSet
 
-urlpatterns = [
-    path('workouts', views.create_workout, name='create_workout'),
-    path('exercises', views.get_exercises, name='get_exercises'),
-    path('users/<int:user_id>/exercises', views.get_user_exercises, name='get_user_exercises')
-]
+router = DefaultRouter()
+router.register(r'exercises', ExerciseViewSet, basename='exercise')
+
+urlpatterns = router.urls
