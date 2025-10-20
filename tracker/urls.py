@@ -6,6 +6,7 @@ from tracker.views.workout_views import WorkoutViewSet
 # Base router
 router = routers.DefaultRouter()
 router.register(r'workouts', WorkoutViewSet, basename='workout')
+router.register(r'exercises', ExerciseViewSet, basename='exersise')
 
 # Nested router
 workout_router = routers.NestedDefaultRouter(router, r'workouts', lookup='workout')
